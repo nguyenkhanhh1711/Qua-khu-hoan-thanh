@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Thì Quá khứ hoàn thành – Past Perfect</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Be+Vietnam+Pro:wght@400;500;600;800&family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f0e7d6;--card:#fbf6ea;--ink:#241d1a;--red:#d63a2b;--blue:#1d4f91;--pink:#f2a3ad;--mute:#6b5d54;--ok:#2a8a5a;--okb:#dcefe3;--no:#c4302b;--nob:#fbdedb;--line:#d9ccb4;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.75 "Be Vietnam Pro",system-ui,sans-serif;overflow-x:hidden}
+#grain{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:80;opacity:.14;mix-blend-mode:multiply}
+#top{position:fixed;top:0;left:0;right:0;z-index:60;padding:calc(8px + env(safe-area-inset-top,0px)) 14px 8px;background:var(--paper);border-bottom:2px solid var(--ink);transform:translateY(-110%);transition:transform .4s}
+#top.on{transform:none}
+.tb{max-width:920px;margin:0 auto;display:flex;align-items:center;gap:12px;font:600 14px "Be Vietnam Pro"}
+.tb b{font:400 20px Anton;letter-spacing:1px;color:var(--red)}
+.pg{flex:1;height:10px;border:2px solid var(--ink);background:var(--card)}
+.pg i{display:block;height:100%;width:0;background:var(--red);transition:width .5s}
+.tb span{white-space:nowrap}.tb .o{color:var(--ok)}.tb .w{color:var(--no)}
+#snd{border:0;background:none;font-size:20px;cursor:pointer}
+header{position:relative;min-height:100vh;overflow:hidden;display:flex;flex-direction:column;align-items:center;padding:46px 16px 40px;text-align:center}
+.vert{position:absolute;left:10px;top:60px;font:400 clamp(30px,6vw,62px)/1 Anton;color:var(--red);writing-mode:vertical-rl;transform:rotate(180deg);letter-spacing:2px}
+.seal{position:absolute;right:16px;top:26px;width:70px;height:70px;border:3px solid var(--red);display:grid;place-items:center;font:400 28px Anton;color:var(--red);transform:rotate(6deg);letter-spacing:1px}
+h1{font:400 clamp(72px,21vw,240px)/.85 Anton;color:var(--red);letter-spacing:-3px;text-shadow:3px 3px 0 #d63a2b33}
+.ko{font:700 clamp(18px,3.4vw,28px) "Noto Sans KR";letter-spacing:6px;margin:4px 0 2px}
+.cap{font:600 12px "Be Vietnam Pro";letter-spacing:4px;color:var(--mute)}
+.frame{position:relative;width:min(340px,80vw);height:min(300px,70vw);border:2px solid var(--ink);background:#f6eedd;margin:18px 0;overflow:hidden}
+.frame svg{width:100%;height:100%;display:block}
+.br{position:absolute;right:-8px;top:-6px;width:70%;pointer-events:none}
+.sub{max-width:540px;margin:4px 0 18px}
+.go{border:2px solid var(--ink);background:var(--red);color:#fff;font:800 16px "Be Vietnam Pro";padding:11px 30px;cursor:pointer;box-shadow:5px 5px 0 var(--ink);transition:.2s}
+.go:hover{transform:translate(-3px,-3px);box-shadow:8px 8px 0 var(--ink)}
+.pt{position:absolute;top:-20px;width:14px;height:10px;border-radius:70% 0 70% 0;background:var(--pink);animation:fall linear infinite;opacity:.9}
+@keyframes fall{to{transform:translate(120px,110vh) rotate(500deg)}}
+.wv{height:46px;background:radial-gradient(circle at 50% 100%,transparent 0 30%,var(--red) 30% 36%,transparent 36% 52%,var(--red) 52% 58%,transparent 58%);background-size:46px 46px;opacity:.85}
+.wrap{max-width:900px;margin:0 auto;padding:0 18px 130px}
+.sec{padding:70px 0 0}
+.sh{display:flex;align-items:flex-end;gap:14px;border-bottom:3px solid var(--ink);margin-bottom:20px;padding-bottom:6px}
+.sh em{font:400 clamp(54px,12vw,90px)/.8 Anton;color:var(--red);font-style:normal}
+.sh h2{font:800 clamp(22px,4.4vw,34px)/1.2 "Be Vietnam Pro";letter-spacing:-.5px;padding-bottom:6px}
+.rv{opacity:0;transform:translateY(34px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}
+.rv.on{opacity:1;transform:none}
+.card{background:var(--card);border:2px solid var(--ink);padding:20px 24px;margin-bottom:18px;box-shadow:6px 6px 0 var(--red)}
+.card h3{font:800 20px "Be Vietnam Pro";margin-bottom:6px}
+b{font-weight:600}.k{color:var(--red)}.kb{color:var(--blue)}
+ul,ol{margin:6px 0 6px 20px}li{margin:4px 0}
+.ok,.bad,.tip{padding:9px 14px;margin-top:10px;font-size:15px;border-left:5px solid}
+.ok{background:var(--okb);border-color:var(--ok)}.bad{background:var(--nob);border-color:var(--no)}.tip{background:#f8e9b8;border-color:#c99a1c}
+.mu{color:var(--mute)}
+.g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.g2 .card{margin:0}
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:15px;background:var(--card);border:2px solid var(--ink)}
+th{background:var(--red);color:#fff;text-align:left;padding:8px 12px;font:800 14px "Be Vietnam Pro"}th.bl{background:var(--blue)}th.dk{background:var(--ink)}
+td{padding:9px 12px;border-top:1.5px solid var(--line);vertical-align:top}
+td:first-child{font-weight:800;background:#f4ead2}
+.chip{display:inline-block;border:1.5px solid var(--ink);padding:0 10px;margin:3px 4px 3px 0;font-size:14px;background:var(--card);transition:.2s;cursor:default}
+.chip:hover{background:var(--red);color:#fff;transform:translateY(-2px)}
+/* timeline */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.tabs button,.btn{font:800 13.5px "Be Vietnam Pro";border:2px solid var(--ink);background:var(--card);color:var(--ink);padding:4px 14px;cursor:pointer;box-shadow:3px 3px 0 var(--ink);transition:.15s}
+.tabs button:hover,.btn:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink)}
+.tabs button.on{background:var(--c,var(--red));color:#fff}
+.tlw{background:#fffaf0;border:2px solid var(--ink);padding:8px 4px 4px;margin-top:6px}
+.tlw svg{width:100%;display:block}
+.ax{stroke:#241d1a;stroke-width:3.5}
+.nowl{stroke:#d63a2b;stroke-width:3;stroke-dasharray:7 6}
+.tl{font:800 19px "Be Vietnam Pro"}.ts{font:500 15px "Be Vietnam Pro"}.tbg{font:400 30px Anton}
+.gr{transform-box:fill-box;transform-origin:left center;animation:gr .9s both}
+@keyframes gr{from{transform:scaleX(0)}}
+.pop{transform-box:fill-box;transform-origin:center;animation:pp .5s both}
+@keyframes pp{from{transform:scale(0)}}
+.fd{animation:fd .8s both}
+@keyframes fd{from{opacity:0}}
+.dr{animation:dr 1.1s both}
+@keyframes dr{from{stroke-dashoffset:1}}
+.tcap{margin-top:10px;display:grid;gap:4px}
+.tcap .bd{display:inline-block;color:#fff;font:800 14px "Be Vietnam Pro";padding:0 14px;background:var(--c);justify-self:start}
+.tcap .en{font:600 19px "Be Vietnam Pro"}
+.sig{margin-top:10px;font-size:14px}
+.sig button{font:600 13.5px "Be Vietnam Pro";border:1.5px solid var(--ink);background:var(--card);padding:0 10px;margin:3px 4px 3px 0;cursor:pointer;transition:.15s}
+.sig button:hover,.sig button.on{background:var(--ink);color:#fff}
+/* quick & quiz */
+.qf{background:#fff3c8;border:2px dashed var(--ink);padding:16px 20px;margin:16px 0}
+.qf h4{font:800 16px "Be Vietnam Pro";color:var(--red);margin-bottom:6px}
+.q{background:var(--card);border:2px solid var(--ink);padding:16px 22px;margin-bottom:14px;box-shadow:5px 5px 0 var(--ink);transition:box-shadow .3s}
+.qf .q{box-shadow:none;background:transparent;border:0;border-top:1px solid #d9c98d;padding:10px 0;margin:0}.qf .q:first-of-type{border-top:0}
+.q.ok2{box-shadow:5px 5px 0 var(--ok)}.q.no2{box-shadow:5px 5px 0 var(--no)}
+.n{display:inline-block;background:var(--ink);color:#fff;font:400 15px Anton;letter-spacing:1px;padding:0 12px;margin-bottom:4px}
+.q p.t{font:600 17.5px/1.55 "Be Vietnam Pro";margin-bottom:10px}
+.q u{text-decoration:none;display:inline-block;min-width:56px;border-bottom:3px solid var(--red);text-align:center;color:var(--red);font-weight:800}
+.op{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(max-width:520px){.op{grid-template-columns:1fr}}
+.op button{display:flex;gap:10px;align-items:center;font:500 15.5px "Be Vietnam Pro";text-align:left;padding:8px 12px;border:2px solid var(--ink);background:var(--paper);color:var(--ink);cursor:pointer;transition:.15s}
+.op button b{flex:none;width:26px;height:26px;background:var(--ink);color:#fff;display:grid;place-items:center;font:400 14px Anton}
+.op button:hover:not(:disabled){background:#fff;transform:translateX(4px)}
+.op button:disabled{cursor:default}
+.op .c{background:var(--ok);border-color:var(--ok);color:#fff}.op .c b{background:#fff;color:var(--ok)}
+.op .x{background:var(--no);border-color:var(--no);color:#fff;animation:sk .4s}.op .x b{background:#fff;color:var(--no)}
+@keyframes sk{25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+.fb{margin-top:10px;padding:10px 14px;font-size:14.5px;border-left:5px solid;animation:up .4s}
+.fb.ok{background:var(--okb);border-color:var(--ok)}.fb.no{background:var(--nob);border-color:var(--no)}
+@keyframes up{from{opacity:0;transform:translateY(8px)}}
+textarea{width:100%;min-height:58px;border:2px solid var(--ink);background:var(--paper);color:var(--ink);padding:8px 12px;font:16px "Be Vietnam Pro";resize:vertical;margin:6px 0}
+textarea:focus{outline:none;border-color:var(--red)}
+.hint{display:inline-block;border:1.5px dashed var(--red);color:var(--red);font:600 13px "Be Vietnam Pro";padding:0 10px;margin-left:6px}
+.btn.r{background:var(--red);color:#fff}
+#res{background:var(--red);color:#fff;border:2px solid var(--ink);box-shadow:8px 8px 0 var(--ink);text-align:center;padding:34px 20px;margin-top:50px}
+#res h2{font:400 40px Anton;letter-spacing:2px}#res .big{font:400 clamp(60px,16vw,110px)/1 Anton}
+#pp{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:8px 0 12px;font-size:14px}#pp i{font-style:normal;border:1.5px solid #fff;padding:0 12px}
+details{background:var(--card);border:2px solid var(--ink);padding:10px 18px;margin-bottom:10px}
+summary{font-weight:800;cursor:pointer}details li{font-size:15px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+
+.qi{padding:10px 0;border-top:1px solid #d9c98d}.qi:first-of-type{border-top:0}
+.qi input{font:600 16px "Be Vietnam Pro";border:0;border-bottom:2px solid var(--ink);background:transparent;width:150px;padding:0 4px;color:var(--red);text-align:center}
+.qi input:focus{outline:none;border-color:var(--red)}
+</style>
+</head>
+<body>
+<svg id="grain"><filter id="nz"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="2"/><feColorMatrix values="0 0 0 0 .3 0 0 0 0 .22 0 0 0 0 .15 0 0 0 .9 0"/></filter><rect width="100%" height="100%" filter="url(#nz)"/></svg>
+<div id="top"><div class="tb"><b>PAST</b><div class="pg"><i id="pg"></i></div><span id="st">0/53</span><span class="o" id="so">✔ 0</span><span class="w" id="sw">✘ 0</span><button id="snd" aria-label="Âm thanh">🔊</button></div></div>
+
+<header>
+  <div id="pts"></div>
+  <div class="vert">TENSES</div><div class="seal">THÌ</div>
+  <h1>PAST</h1>
+  <div class="ko">과거 완료</div><div class="cap">THÌ QUÁ KHỨ HOÀN THÀNH · PAST PERFECT</div>
+  <div class="frame">
+    <svg viewBox="0 0 300 260"><rect width="300" height="260" fill="#f6eedd"/><circle cx="115" cy="85" r="64" fill="#d63a2b"/><circle cx="165" cy="130" r="58" fill="#2b2420" opacity=".88"/>
+    <g><rect x="30" y="196" width="240" height="26" fill="#3b332d"/><path d="M120 222a30 22 0 0 1 60 0z" fill="#f6eedd"/><rect x="62" y="156" width="176" height="40" fill="#b8352a"/><path d="M78 156v40M104 156v40M130 156v40M156 156v40M182 156v40M208 156v40M224 156v40" stroke="#6b1d16" stroke-width="3"/><path d="M36 160Q150 144 264 160Q244 152 232 138L68 138Q56 152 36 160Z" fill="#2b2420"/><rect x="100" y="106" width="100" height="32" fill="#c23c30"/><path d="M82 110Q150 92 218 110Q202 102 192 88L108 88Q98 102 82 110Z" fill="#2b2420"/><path d="M130 88Q150 70 170 88Z" fill="#2b2420"/></g>
+    <path d="M0 222h300v38H0z" fill="#8a8e8a" opacity=".5"/><path d="M0 232q15-8 30 0t30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0" stroke="#fff" stroke-width="2" fill="none" opacity=".6"/></svg>
+    <svg class="br" id="br" viewBox="0 0 280 200"></svg>
+  </div>
+  <p class="sub">“Quá khứ của quá khứ”: bản chất, cấu trúc, phân biệt với Quá khứ đơn và Hiện tại hoàn thành, kèm <b>trục thời gian minh họa</b> và bài tập thực chiến.</p>
+  <button class="go" id="go">Bắt đầu học ➔</button>
+</header>
+<div class="wv"></div>
+
+<main class="wrap">
+<section class="sec" id="p1">
+  <div class="sh rv"><em>01</em><h2>Bản chất và cách sử dụng (Past Perfect)</h2></div>
+  <div class="card rv"><p><b class="kb">Thì Quá khứ hoàn thành (Past Perfect)</b> được mệnh danh là <b>“quá khứ của quá khứ”</b>. Ta dùng thì này để diễn tả một hành động đã xảy ra và <b>KẾT THÚC TRƯỚC</b> một hành động khác, hoặc trước một thời điểm xác định trong quá khứ.</p></div>
+  <div class="card rv"><h3>Ví dụ minh họa</h3><div class="ok"><b>When I arrived at the station, the train <span class="kb">had left</span>.</b><br>(Khi tôi đến nhà ga, chuyến tàu đã rời đi rồi.)</div><p style="margin-top:10px">➤ Việc “tàu rời đi” xảy ra <b>trước</b> việc “tôi đến”. Do đó: “tàu rời đi” chia <b class="kb">Quá khứ hoàn thành</b>, “tôi đến” chia <b>Quá khứ đơn</b>.</p></div>
+</section>
+
+<section class="sec" id="p2">
+  <div class="sh rv"><em>02</em><h2>Cấu trúc và dấu hiệu nhận biết</h2></div>
+  <div class="card rv"><h3>1. Cấu trúc ngữ pháp</h3><div class="tw"><table><tr><th class="bl">Thể</th><th class="bl">Công thức &amp; ví dụ</th></tr>
+  <tr><td>Khẳng định (+)</td><td>S + had + V3/ed<br><i class="mu">She had finished her homework before 9 PM yesterday.</i></td></tr>
+  <tr><td>Phủ định (−)</td><td>S + had + NOT + V3/ed (hadn't)<br><i class="mu">They hadn't met him before the party.</i></td></tr>
+  <tr><td>Nghi vấn (?)</td><td>Had + S + V3/ed?<br><i class="mu">Had you eaten before you went out?</i></td></tr></table></div>
+  <div class="tip"><b>Lưu ý:</b> khác với Hiện tại hoàn thành (have/has), Quá khứ hoàn thành chỉ dùng <b>duy nhất trợ động từ HAD</b> cho tất cả các ngôi (I, You, We, They, He, She, It, số ít, số nhiều).</div></div>
+  <div class="card rv"><h3>2. Dấu hiệu nhận biết và liên từ thường gặp</h3><p class="mu">QKHT hiếm khi đứng độc lập. Nó thường xuất hiện trong câu ghép, đi kèm Quá khứ đơn qua các liên từ chỉ thời gian:</p>
+  <ul><li><b>By + [thời điểm trong quá khứ]</b> (trước lúc...): By 2010, By yesterday, By the end of last month...</li><li><b>Before</b> (trước khi): Before + QKĐ, QKHT. <i class="mu">(Before she came, I had cooked dinner.)</i></li><li><b>By the time</b> (vào lúc): By the time + QKĐ, QKHT. <i class="mu">(By the time we arrived, the movie had started.)</i></li><li><b>After</b> (sau khi): After + QKHT, QKĐ. <i class="mu">(After I had cooked dinner, she came.)</i></li><li><b>When</b> (khi): tương tự “By the time”. <i class="mu">(When I got there, he had already left.)</i></li></ul></div>
+  <div class="qf rv" id="qf"></div>
+</section>
+
+<section class="sec" id="p3">
+  <div class="sh rv"><em>03</em><h2>Minh họa trục thời gian</h2></div>
+  <div class="card rv"><p>Quá khứ bên trái, <b class="k">HIỆN TẠI</b> là vạch đỏ, tương lai bên phải. Chọn từng tình huống để xem việc nào xảy ra <b>trước</b>, việc nào <b>sau</b>. <span style="color:var(--blue)">■</span> Quá khứ hoàn thành &nbsp;<span style="color:var(--ink)">■</span> Quá khứ đơn &nbsp;<span style="color:var(--red)">■</span> Hiện tại hoàn thành</p>
+  <div class="tabs" id="tt"></div>
+  <div class="tlw"><svg id="tsv" viewBox="0 0 600 250"></svg></div>
+  <div class="tcap" id="tcap"></div>
+  <div class="sig" id="sig"><b>Thử liên từ / cấu trúc:</b> <span id="sgb"></span></div></div>
+</section>
+
+<section class="sec" id="p4">
+  <div class="sh rv"><em>04</em><h2>Phân biệt thì Quá khứ hoàn thành</h2></div>
+  <div class="card rv"><h3>1. QKHT và Quá khứ đơn (QKĐ)</h3><div class="tw"><table><tr><th class="dk">Quá khứ đơn (Past Simple)</th><th class="bl">Quá khứ hoàn thành (Past Perfect)</th></tr>
+  <tr><td style="font-weight:400;background:none">Diễn tả <b>chuỗi hành động xảy ra liên tiếp</b> nhau trong quá khứ.</td><td>Diễn tả một hành động xảy ra <b>trước</b> một hành động khác trong quá khứ.</td></tr>
+  <tr><td style="font-weight:400;background:none">VD: When I arrived, he <b>cooked</b> dinner.<br>(Tôi đến nơi, SAU ĐÓ anh ấy mới nấu ăn.)</td><td>VD: When I arrived, he <b>had cooked</b> dinner.<br>(Tôi đến nơi thì anh ấy ĐÃ NẤU ĂN XONG RỒI.)</td></tr></table></div></div>
+  <div class="card rv"><h3>2. QKHT và Hiện tại hoàn thành (HTHT)</h3><div class="tw"><table><tr><th>Hiện tại hoàn thành (Present Perfect)</th><th class="bl">Quá khứ hoàn thành (Past Perfect)</th></tr>
+  <tr><td style="font-weight:400;background:none">Kéo dài từ quá khứ và kết thúc hoặc vẫn còn tiếp diễn ở <b>HIỆN TẠI</b>.</td><td>Kéo dài từ một thời điểm trong quá khứ và kết thúc <b>TRƯỚC MỘT THỜI ĐIỂM KHÁC TRONG QUÁ KHỨ</b>.</td></tr>
+  <tr><td style="font-weight:400;background:none">VD: I <b>have lived</b> here for 5 years.<br>(Đến bây giờ tôi VẪN ĐANG SỐNG ở đây.)</td><td>VD: I <b>had lived</b> here for 5 years before I moved.<br>(Trước khi chuyển nhà, tôi đã sống ở đó. Bây giờ KHÔNG CÒN SỐNG ở đó nữa.)</td></tr></table></div></div>
+</section>
+
+<section class="sec" id="p5">
+  <div class="sh rv"><em>05</em><h2>Kiến thức nâng cao và lưu ý trọng tâm</h2></div>
+  <div class="card rv"><h3>1. Cấu trúc “Vừa mới... thì...” (No sooner... than / Hardly... when)</h3><p>Diễn tả một hành động vừa xảy ra xong thì lập tức có hành động khác xen vào. Hành động xảy ra trước luôn chia <b class="kb">QKHT</b> nhưng bị <b>ĐẢO NGỮ</b>.</p>
+  <div class="tip"><b>No sooner + had + S + V3/ed + than + S + V2/ed</b></div><div class="ok">VD: No sooner <b>had he arrived</b> than the phone <b>rang</b>. <span class="mu">(Anh ấy vừa mới đến thì điện thoại reo.)</span></div>
+  <div class="tip"><b>Hardly / Scarcely + had + S + V3/ed + when + S + V2/ed</b></div><div class="ok">VD: Hardly <b>had she finished</b> the test when the bell <b>rang</b>. <span class="mu">(Cô ấy vừa làm xong bài kiểm tra thì chuông reo.)</span></div></div>
+  <div class="card rv"><h3>2. Lưu ý về Câu điều kiện loại 3</h3><p>QKHT là thành phần <b>bắt buộc</b> trong mệnh đề If của câu điều kiện loại 3 (giả thiết trái ngược với thực tế trong quá khứ).</p>
+  <div class="tip"><b>If + S + had + V3/ed, S + would/could + have + V3/ed</b></div><div class="ok">VD: If I <b>had studied</b> harder, I <b>would have passed</b> the exam. <span class="mu">(Nếu tôi đã học chăm hơn, tôi đã đậu kỳ thi rồi. Thực tế là đã lười học và rớt.)</span></div></div>
+</section>
+
+<section class="sec" id="p6">
+  <div class="sh rv"><em>06</em><h2>Trắc nghiệm trộn lẫn QKHT và QKĐ (40 câu)</h2></div>
+  <p class="mu rv" style="margin-bottom:16px"><b>Yêu cầu:</b> phân tích kỹ các liên từ thời gian (Before, After, By the time, When) để xác định hành động nào xảy ra trước, hành động nào xảy ra sau.</p>
+  <div id="mq"></div>
+</section>
+
+<section class="sec" id="p7">
+  <div class="sh rv"><em>07</em><h2>Bài tập dịch thuật (10 câu)</h2></div>
+  <p class="mu rv" style="margin-bottom:16px">Vận dụng QKHT và QKĐ, chú ý các liên từ <b>Before, After, By the time, When</b>. Viết xong bấm kiểm tra để xem đáp án rồi tự chấm.</p>
+  <div id="ts"></div>
+</section>
+
+<section class="sec" id="p8">
+  <div class="sh rv"><em>08</em><h2>Đáp án Mini-Test và kết quả</h2></div>
+  <div id="ans" class="rv"></div>
+  <div id="res" class="rv"><h2>KẾT QUẢ CỦA BẠN</h2><div class="big" id="big">0 / 53</div><div id="pp"></div><p id="msg">Hoàn thành tất cả bài tập để nhận lời nhắn nhé.</p><button class="btn" onclick="location.reload()">Làm lại từ đầu ↺</button></div>
+</section>
+</main>
+
+
+<script>
+const $=s=>document.querySelector(s);
+let ac,on=true;
+function tone(f,t,d,ty,v,to){const o=ac.createOscillator(),g=ac.createGain();o.type=ty;o.frequency.setValueAtTime(f,t);if(to)o.frequency.exponentialRampToValueAtTime(to,t+d);g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+.015);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g);g.connect(ac.destination);o.start(t);o.stop(t+d+.05)}
+function sfx(ok){if(!on)return;ac=ac||new(window.AudioContext||window.webkitAudioContext)();ac.resume();const t=ac.currentTime;if(ok)[660,880,1175].forEach((f,i)=>tone(f,t+i*.09,.4,"sine",.16));else{tone(300,t,.3,"triangle",.16,190);tone(220,t+.15,.35,"triangle",.14,150)}}
+$("#snd").onclick=()=>{on=!on;$("#snd").textContent=on?"🔊":"🔇"};
+/* ===== timeline ===== */
+const C={r:"#d63a2b",k:"#241d1a",b:"#1d4f91",g:"#9a8f84"};
+const T=(x,y,t,c,cl,a)=>`<text x="${x}" y="${y}" text-anchor="${a||"middle"}" class="${cl||"tl"}" fill="${C[c]||c}">${t}</text>`;
+const P=(x,y,c,d)=>`<circle class="pop" style="animation-delay:${d||0}s" cx="${x}" cy="${y}" r="11" fill="${C[c]}" stroke="#fffaf0" stroke-width="3"/>`;
+const SP=(x1,x2,y,c,d,op)=>`<rect class="gr" style="animation-delay:${d||0}s" x="${x1}" y="${y}" width="${x2-x1}" height="18" rx="9" fill="${C[c]}" opacity="${op||1}"/>`;
+const AR=(x1,y1,x2,y2,c,d,dash)=>`<path class="${dash?"fd":"dr"}" pathLength="1" style="animation-delay:${d||0}s" d="M${x1} ${y1}L${x2} ${y2}" stroke="${C[c]}" stroke-width="4" fill="none" ${dash?'stroke-dasharray="9 7"':'stroke-dasharray="1"'}/><path class="fd" style="animation-delay:${(d||0)+.9}s" d="M${x2} ${y2}l-12 -8v16z" fill="${C[c]}"/>`;
+function axis(y,now,lbl){return `<line x1="20" y1="${y}" x2="572" y2="${y}" class="ax"/><path d="M572 ${y-9}L590 ${y}L572 ${y+9}Z" fill="#241d1a"/>`+(lbl?"":T(24,y+62,"QUÁ KHỨ","g","ts","start")+T(588,y+62,"TƯƠNG LAI","g","ts","end"))}
+function nowL(x,y1,y2){return `<line class="nowl" x1="${x}" y1="${y1}" x2="${x}" y2="${y2}"/>`+T(x,y2+22,"HIỆN TẠI","r")}
+const N=400;
+const SC=[
+{n:"QKHT · xảy ra trước",c:"b",bd:"Quá khứ hoàn thành",en:"When I arrived at the station, the train had left.",vi:"Hai việc đều ở quá khứ: tàu <b>đã rời đi</b> (xảy ra trước, <b>had left</b>), sau đó tôi mới đến ga (QKĐ, <b>arrived</b>).",svg:()=>axis(150)+nowL(450,70,205)+P(170,150,"b")+T(170,184,"tàu rời đi","b")+T(170,204,"had left","b","ts")+P(340,150,"k",.5)+T(340,184,"tôi đến ga","k")+T(340,204,"arrived (QKĐ)","k","ts")+AR(182,118,328,118,"b",.9)+T(255,100,"xảy ra TRƯỚC","b")},
+{n:"QKĐ · liên tiếp",c:"k",bd:"Quá khứ đơn",en:"When I arrived, he cooked dinner.",vi:"Hai hành động <b>nối tiếp nhau</b>: tôi đến, <b>sau đó</b> anh ấy mới nấu ăn (cả hai đều chia QKĐ).",svg:()=>axis(150)+nowL(450,70,205)+P(150,150,"k")+T(150,184,"tôi đến","k")+T(150,204,"arrived","g","ts")+P(320,150,"k",.5)+T(320,184,"anh nấu ăn","k")+T(320,204,"cooked","g","ts")+AR(162,118,308,118,"k",.9)+T(235,100,"rồi SAU ĐÓ","k")},
+{n:"QKHT · đã xong rồi",c:"b",bd:"Quá khứ hoàn thành",en:"When I arrived, he had cooked dinner.",vi:"Anh ấy <b>đã nấu xong</b> trước khi tôi đến: nấu ăn (<b>had cooked</b>) xảy ra trước, tôi đến (<b>arrived</b>) xảy ra sau.",svg:()=>axis(150)+nowL(450,70,205)+P(150,150,"b")+T(150,184,"anh nấu xong","b")+T(150,204,"had cooked","b","ts")+P(320,150,"k",.5)+T(320,184,"tôi đến","k")+T(320,204,"arrived","g","ts")+AR(162,118,308,118,"b",.9)+T(235,100,"xảy ra TRƯỚC","b")},
+{n:"QKHT và HTHT",c:"b",bd:"QKHT với HTHT",en:"have lived here 5 years  vs  had lived there 5 years",vi:"<b class='k'>HTHT</b> kéo dài tới <b>hiện tại</b> (vẫn đang sống ở đây). <b class='kb'>QKHT</b> kéo dài tới một mốc <b>trong quá khứ</b> (trước khi chuyển nhà), nay không còn ở đó.",vb:"0 0 600 300",svg:()=>`<line x1="20" y1="95" x2="572" y2="95" class="ax"/><path d="M572 86L590 95L572 104Z" fill="#241d1a"/><line x1="20" y1="225" x2="572" y2="225" class="ax"/><path d="M572 216L590 225L572 234Z" fill="#241d1a"/>`+`<line class="nowl" x1="${N}" y1="40" x2="${N}" y2="262"/>`+T(N,285,"HIỆN TẠI","r")+T(24,22,"HTHT","r","tl","start")+SP(100,N,64,"r",.2)+P(100,95,"r")+T(250,54,"have lived here for 5 years","r")+AR(N,73,545,73,"r",1,1)+T(490,54,"vẫn tiếp tục…","r","ts")+T(24,160,"QKHT","b","tl","start")+SP(100,300,194,"b",.5)+P(100,225,"b",.4)+P(300,225,"k",1.2)+T(200,184,"had lived there for 5 years","b")+T(300,258,"moved","k","ts")+T(430,200,"✕ nay không còn ở đó","g","ts","start")},
+{n:"No sooner / Hardly",c:"b",bd:"Đảo ngữ với QKHT",en:"No sooner had he arrived than the phone rang.",vi:"Vừa mới đến <b>thì</b> điện thoại reo: hành động xảy ra trước chia <b>had + V3</b> (đảo ngữ), hành động sau chia QKĐ.",svg:()=>axis(150)+nowL(450,70,205)+P(190,150,"b")+T(190,184,"anh ấy đến","b")+T(190,204,"had arrived","b","ts")+P(335,150,"k",.5)+T(345,184,"điện thoại reo","k")+T(345,204,"rang","g","ts")+AR(202,118,322,118,"b",.9)+T(262,100,"vừa… thì","b","ts")},
+{n:"Điều kiện loại 3",c:"b",bd:"Câu điều kiện loại 3",en:"If I had studied harder, I would have passed the exam.",vi:"Giả thiết <b>trái ngược quá khứ</b>: thực tế là đã lười học và rớt. If + <b>had V3</b>, S + would have V3.",svg:()=>axis(150)+nowL(450,70,205)+`<circle class="pop" cx="180" cy="150" r="11" fill="none" stroke="#1d4f91" stroke-width="3" stroke-dasharray="5 4"/><circle class="pop" style="animation-delay:.5s" cx="320" cy="150" r="11" fill="none" stroke="#1d4f91" stroke-width="3" stroke-dasharray="5 4"/>`+T(180,184,"had studied","b")+T(180,204,"(không xảy ra)","g","ts")+T(320,184,"would have passed","b")+T(320,204,"(không xảy ra)","g","ts")+AR(194,118,306,118,"b",.9,1)+T(250,100,"nếu… thì","b")+T(250,60,"Thực tế: lười học ➤ rớt","k","ts")}
+];
+const SG=[["before",0],["by the time",0],["by + mốc (By 2015)",0],["after",0],["when (đã… rồi)",2],["when (liên tiếp)",1],["as soon as",1],["so với have/has V3",3],["no sooner… than",4],["hardly… when",4],["if + had V3",5]];
+$("#tt").innerHTML=SC.map((s,i)=>`<button data-i="${i}" style="--c:${C[s.c]}">${s.n}</button>`).join("");
+$("#sgb").innerHTML=SG.map(g=>`<button data-s="${g[1]}" data-w="${g[0]}">${g[0]}</button>`).join("");
+function tl(i,w){const s=SC[i];$("#tsv").setAttribute("viewBox",s.vb||"0 0 600 250");$("#tsv").innerHTML=s.svg();document.querySelectorAll("#tt button").forEach((b,k)=>b.classList.toggle("on",k==i));
+document.querySelectorAll("#sgb button").forEach(b=>b.classList.toggle("on",b.dataset.w==w));
+$("#tcap").style.setProperty("--c",C[s.c]);$("#tcap").innerHTML=`<span class="bd">${s.bd}</span><div class="en">${s.en}</div><div>${w?`Dấu hiệu <b>“${w}”</b> ➤ `:""}${s.vi}</div>`}
+document.querySelectorAll("#tt button").forEach(b=>b.onclick=()=>tl(+b.dataset.i));
+document.querySelectorAll("#sgb button").forEach(b=>b.onclick=()=>tl(+b.dataset.s,b.dataset.w));tl(0);
+/* ===== questions ===== */
+const S={f:[0,0],q:[0,0],t:[0,0]},TOT=53,L="ABCD";
+function upd(){const a=S.f[1]+S.q[1]+S.t[1],o=S.f[0]+S.q[0]+S.t[0];$("#pg").style.width=a/TOT*100+"%";$("#st").textContent=a+"/"+TOT;$("#so").textContent="✔ "+o;$("#sw").textContent="✘ "+(a-o);$("#big").textContent=o+" / "+TOT;$("#pp").innerHTML=`<i>Bài nhanh: ${S.f[0]}/3</i><i>Trắc nghiệm: ${S.q[0]}/40</i><i>Dịch: ${S.t[0]}/10</i>`;
+if(a==TOT){const p=o/TOT;$("#msg").textContent=p>=.9?"Xuất sắc! Bạn nắm chắc QKHT và QKĐ.":p>=.7?"Khá tốt! Xem lại vài câu sai rồi thử lại nhé.":"Cố lên! Xem lại trục thời gian và làm lại nha.";$("#res").scrollIntoView({block:"center"})}}
+function QC(q,n,g,cls){const d=document.createElement("div"),o=q[1].split("|");d.className="q"+(cls?" rv":"");d.innerHTML=`<span class="n">${n}</span><p class="t">${q[0].replace(/_{3,}/g,"<u>&nbsp;</u>")}</p><div class="op">${o.map((t,j)=>`<button data-j="${j}"><b>${L[j]}</b>${t}</button>`).join("")}</div><div class="fb" style="display:none"></div>`;
+const bs=d.querySelectorAll("button"),fb=d.querySelector(".fb");bs.forEach(b=>b.onclick=()=>{const j=+b.dataset.j,ok=j==q[2];bs.forEach(x=>x.disabled=true);bs[q[2]].classList.add("c");if(!ok)b.classList.add("x");d.classList.add(ok?"ok2":"no2");fb.style.display="block";fb.className="fb "+(ok?"ok":"no");fb.innerHTML=(ok?"✅ <b>Chính xác!</b> ":`❌ <b>Chưa đúng.</b> Đáp án đúng là <b>${L[q[2]]}. ${o[q[2]]}</b>. `)+q[3];S[g][0]+=ok;S[g][1]++;sfx(ok);upd()});return d}
+const QF=[["After he (finish) <i></i> his work, he (go) <i></i> home.",[["had finished"],["went"]],"had finished / went","Làm xong việc <b>trước</b> (had finished), đi về <b>sau</b> (went). After + QKHT, QKĐ."],["By the time the police (arrive) <i></i>, the thief (escape) <i></i>.",[["arrived"],["had escaped"]],"arrived / had escaped","Tên trộm tẩu thoát <b>trước</b> khi cảnh sát đến. By the time + QKĐ, QKHT."],["She (not read) <i></i> any English books before she (start) <i></i> university.",[["hadn't read","had not read"],["started"]],"hadn't read / started","Việc không đọc diễn ra <b>trước</b> khi bắt đầu học đại học. Before + QKĐ; việc trước chia QKHT."]];
+const norm=v=>v.toLowerCase().replace(/[’`]/g,"'").replace(/\.$/,"").replace(/\s+/g," ").trim();
+$("#qf").innerHTML=`<h4>✏ Bài tập vận dụng nhanh (Mini-Test)</h4><p class="mu" style="margin-bottom:6px">Xác định hành động nào xảy ra trước, hành động nào xảy ra sau, rồi chia động từ trong ngoặc.</p>`;
+QF.forEach((q,i)=>{const d=document.createElement("div");d.className="qi";const parts=q[0].split("<i></i>");d.innerHTML=`<p><b>${i+1}.</b> `+parts.map((p,k)=>p+(k<parts.length-1?'<input autocomplete="off" spellcheck="false">':"")).join("")+`</p><button class="btn">Kiểm tra</button><div class="fb" style="display:none"></div>`;
+const ins=d.querySelectorAll("input"),bt=d.querySelector(".btn"),fb=d.querySelector(".fb");bt.onclick=()=>{if(bt.disabled)return;const ok=[...ins].every((x,k)=>q[1][k].includes(norm(x.value)));ins.forEach(x=>x.disabled=true);bt.disabled=true;fb.style.display="block";fb.className="fb "+(ok?"ok":"no");fb.innerHTML=(ok?"✅ <b>Chính xác!</b> ":`❌ <b>Chưa đúng.</b> Đáp án: <b>${q[2]}</b>. `)+q[3];S.f[0]+=ok;S.f[1]++;sfx(ok);upd()};$("#qf").appendChild(d)});
+$("#ans").innerHTML=`<details open><summary>Đáp án Mini-Test (Phần 2)</summary><ul><li>1. <b>had finished / went</b> (làm xong việc trước, đi về sau)</li><li>2. <b>arrived / had escaped</b> (tên trộm tẩu thoát trước khi cảnh sát đến)</li><li>3. <b>hadn't read / started</b> (việc không đọc diễn ra trước khi bắt đầu học đại học)</li></ul></details>`;
+const Q=[
+["When we arrived at the cinema, the movie ___.","was starting|started|has started|had started",3,"Phim bắt đầu <b>trước</b> khi chúng tôi đến → QKHT: <b>had started</b>."],
+["She told me that she ___ him before.","doesn't meet|hadn't met|hasn't met|didn't meet",1,"Việc chưa từng gặp xảy ra <b>trước</b> lúc cô ấy nói (quá khứ của quá khứ) → <b>hadn't met</b>."],
+["By the time the police came, the burglar ___.","escaped|has escaped|escapes|had escaped",3,"By the time + QKĐ (came), mệnh đề sau chia QKHT → <b>had escaped</b>."],
+["Before he ___ to bed, he had finished his homework.","goes|went|had gone|has gone",1,"Before + QKĐ, QKHT: hành động sau (đi ngủ) chia QKĐ → <b>went</b>."],
+["I ___ the car after I had washed it.","polish|polished|have polished|had polished",1,"After + QKHT (had washed), mệnh đề còn lại chia QKĐ → <b>polished</b>."],
+["They ___ in London for ten years before they moved to Paris.","live|have lived|lived|had lived",3,"Sống ở London kéo dài đến lúc chuyển đi Paris (mốc quá khứ) → <b>had lived</b>."],
+["As soon as she ___ the room, she knew something was wrong.","has entered|had entered|enters|entered",3,"Hai hành động nối tiếp nhau (vào phòng rồi biết) → cùng QKĐ: <b>entered</b>."],
+["He didn't realize he ___ his wallet until he reached the restaurant.","loses|had lost|has lost|lost",1,"Mất ví xảy ra <b>trước</b> lúc nhận ra → QKHT: <b>had lost</b>."],
+["I was very tired because I ___ all day.","have worked|had worked|worked|work",1,"Làm việc cả ngày là nguyên nhân xảy ra <b>trước</b> lúc mệt → <b>had worked</b>."],
+["We ___ the house before our guests arrived.","cleaned|had cleaned|have cleaned|clean",1,"Before + QKĐ (arrived); dọn nhà xong <b>trước</b> → <b>had cleaned</b>."],
+["When I got to the party, many people ___ already ___.","had / left|do / leave|did / leave|have / left",0,"“Already” và việc rời đi xảy ra <b>trước</b> khi tôi đến → <b>had already left</b>."],
+["By 2015, my brother ___ his university degree.","finished|finishes|has finished|had finished",3,"“By + mốc quá khứ (2015)” → QKHT: <b>had finished</b>."],
+["The teacher asked the boy why he ___ his homework.","hasn't done|doesn't do|didn't do|hadn't done",3,"Việc không làm bài xảy ra <b>trước</b> lúc cô giáo hỏi → <b>hadn't done</b>."],
+["He ___ the piano for 5 years before he gave his first concert.","had played|has played|plays|played",0,"Chơi piano 5 năm <b>trước</b> buổi hòa nhạc đầu tiên (quá khứ) → <b>had played</b>."],
+["After they ___ their dinner, they went out for a walk.","ate|had eaten|eat|have eaten",1,"After + QKHT, QKĐ: ăn tối xong <b>trước</b> → <b>had eaten</b>."],
+["I ___ that museum before, so I didn't want to go again.","visit|visited|had visited|have visited",2,"Đã đến bảo tàng <b>trước</b> thời điểm đang nói ở quá khứ → <b>had visited</b>."],
+["She couldn't call her mom because she ___ her phone at home.","leaves|has left|had left|left",2,"Để quên điện thoại xảy ra <b>trước</b> lúc không gọi được → <b>had left</b>."],
+["The plane ___ by the time we got to the airport.","had taken off|took off|takes off|has taken off",0,"By the time + QKĐ (got), mệnh đề trước chia QKHT → <b>had taken off</b>."],
+["I ___ a novel by Stephen King last night.","have read|had read|was reading|read",3,"“Last night” là một hành động đơn lẻ trong quá khứ, không có mốc để so sánh → QKĐ: <b>read</b>."],
+["No sooner ___ the house than it started to rain.","I had left|did I leave|have I left|had I left",3,"Cấu trúc <b>No sooner + had + S + V3 + than</b> (đảo ngữ) → <b>had I left</b>."],
+["Hardly ___ the door when the dog ran out.","he had opened|has he opened|had he opened|did he open",2,"Cấu trúc <b>Hardly + had + S + V3 + when</b> (đảo ngữ) → <b>had he opened</b>."],
+["When we reached the stadium, the match ___ for 15 minutes.","went on|goes on|had gone on|has gone on",2,"Trận đấu đã diễn ra 15 phút <b>trước</b> lúc chúng tôi đến → <b>had gone on</b>."],
+["She thanked me for what I ___ for her.","did|had done|have done|do",1,"Việc tôi làm cho cô ấy xảy ra <b>trước</b> lời cảm ơn → <b>had done</b>."],
+["We ___ friends for a long time before we started dating.","were|are|have been|had been",3,"Là bạn trong thời gian dài <b>trước</b> khi hẹn hò → <b>had been</b>."],
+["I was late for school because my alarm clock ___.","didn't ring|hasn't rung|hadn't rung|doesn't ring",2,"Chuông báo thức không reo là nguyên nhân xảy ra <b>trước</b> việc đến muộn → <b>hadn't rung</b>."],
+["My father ___ a new car yesterday.","bought|buys|had bought|has bought",0,"“Yesterday” là mốc quá khứ xác định, không có hành động khác để so sánh → QKĐ: <b>bought</b>."],
+["They ___ English before they moved to New York.","haven't studied|didn't study|hadn't studied|don't study",2,"Chưa học tiếng Anh <b>trước</b> khi chuyển đến New York → <b>hadn't studied</b>."],
+["By the time I ___ to the meeting, it had already finished.","have got|get|got|had got",2,"By the time + QKĐ, mệnh đề sau (had already finished) chia QKHT → <b>got</b>."],
+["He ___ his keys, so he couldn't get into his apartment.","lost|lose|had lost|has lost",2,"Mất chìa khóa xảy ra <b>trước</b> lúc không vào được nhà → <b>had lost</b>."],
+["I ___ breakfast before I went to school.","had had|had|have|have had",0,"Ăn sáng xong <b>trước</b> khi đi học → QKHT của “have” là <b>had had</b> (had + V3 của have)."],
+["She ___ a teacher for 10 years before she became a principal.","has been|had been|is|was",1,"Làm giáo viên 10 năm <b>trước</b> khi lên làm hiệu trưởng → <b>had been</b>."],
+["When I saw him, he ___ completely.","changed|has changed|had changed|changes",2,"Anh ấy đã thay đổi hoàn toàn <b>trước</b> lúc tôi thấy → <b>had changed</b>."],
+["Everyone ___ the room before the bomb exploded.","has left|had left|leaves|left",1,"Mọi người rời phòng <b>trước</b> khi bom nổ → <b>had left</b>."],
+["I didn't recognize my old friend because she ___ a lot of weight.","lose|lost|had lost|has lost",2,"Giảm cân xảy ra <b>trước</b> lúc tôi không nhận ra → <b>had lost</b>."],
+["We ___ the contract after we had discussed all the terms.","signed|had signed|sign|have signed",0,"After + QKHT (had discussed), mệnh đề còn lại chia QKĐ → <b>signed</b>."],
+["By the end of last year, they ___ three major projects.","complete|completed|had completed|have completed",2,"“By the end of last year” (mốc quá khứ) → QKHT: <b>had completed</b>."],
+["He failed the test because he ___ attention in class.","doesn't pay|didn't pay|hasn't paid|hadn't paid",3,"Không chú ý học là nguyên nhân xảy ra <b>trước</b> việc trượt bài kiểm tra → <b>hadn't paid</b>."],
+["I ___ the letter yesterday morning.","send|have sent|had sent|sent",3,"“Yesterday morning” là mốc quá khứ xác định → QKĐ: <b>sent</b>."],
+["When we ___ at the hotel, our room hadn't been cleaned yet.","arrive|arrived|had arrived|have arrived",1,"Mệnh đề sau chia QKHT (hadn't been cleaned), nên mệnh đề “When” chia QKĐ: <b>arrived</b>."],
+["The children ___ asleep before their parents returned.","had fallen|have fallen|fall|fell",0,"Ngủ say <b>trước</b> khi bố mẹ về (Before + QKĐ) → <b>had fallen</b>."]];
+Q.forEach((q,i)=>$("#mq").appendChild(QC(q,"CÂU "+(i+1),"q",1)));
+const TR=[["Khi tôi đến nhà ga, chuyến tàu đã rời đi.","When I arrived at the station, the train had left.","When + QKĐ (arrived), QKHT (had left): tàu đi trước."],["Cậu bé đã ăn tối xong trước khi cậu đi ngủ.","The boy had eaten dinner before he went to bed.","Before + QKĐ; ăn tối xong trước → had eaten."],["Tôi chưa bao giờ nhìn thấy tuyết trước khi tôi đến Nhật Bản.","I had never seen snow before I went to Japan.","had never + V3: chưa từng trải qua tính đến mốc quá khứ."],["Cô ấy không thể vào nhà vì cô ấy đã quên chìa khóa.","She couldn't enter the house because she had forgotten her keys.","Việc quên chìa khóa xảy ra trước việc không vào được nhà."],["Họ đã sống ở London 5 năm trước khi họ chuyển đến Paris.","They had lived in London for 5 years before they moved to Paris.","had lived for 5 years: kéo dài tới mốc quá khứ rồi chấm dứt."],["Khi mẹ tôi về, tôi đã làm xong bài tập về nhà.","When my mother came back, I had finished my homework.","Làm xong trước khi mẹ về → had finished."],["Chúng tôi đã dọn dẹp nhà cửa xong xuôi trước khi khách đến.","We had cleaned the house before the guests arrived.","Before + QKĐ, việc trước dùng QKHT."],["Sau khi anh ấy hoàn thành công việc, anh ấy đã đi dạo (went for a walk).","After he had finished his work, he went for a walk.","After + QKHT, QKĐ."],["Chiếc xe bị hỏng (broke down) vì anh ấy đã không bảo dưỡng (maintain) nó.","The car broke down because he hadn't maintained it.","hadn't + V3: chưa bảo dưỡng trước khi xe hỏng."],["Cho đến năm ngoái, tôi chưa từng gặp cô ấy.","By last year, I hadn't met her.","By + mốc quá khứ → hadn't + V3."]];
+
+TR.forEach((t,i)=>{const c=document.createElement("div");c.className="q rv";c.innerHTML=`<span class="n">CÂU ${i+1}</span><p class="t">${t[0]} <span class="hint">had + V3</span></p><textarea placeholder="Viết câu tiếng Anh của bạn..."></textarea><button class="btn r">Kiểm tra</button><div class="fb" style="display:none"></div>`;
+const ta=c.querySelector("textarea"),fb=c.querySelector(".fb"),bt=c.querySelector(".btn");bt.onclick=()=>{if(bt.disabled)return;bt.disabled=true;ta.readOnly=true;const v=ta.value.toLowerCase();fb.style.display="block";fb.className="fb ok";
+fb.innerHTML=`${v.trim()?(/\bhad\b|hadn't/.test(v)?"👍 Bạn đã dùng <b>had</b> (QKHT).":"💡 Bạn chưa dùng <b>had + V3</b>."):"💡 Bạn chưa nhập câu nào."}<br><b>Đáp án:</b> ${t[1]}<br><i>Lưu ý:</i> ${t[2]}<div style="margin-top:6px"><button class="btn" data-r="1">Mình viết đúng</button> <button class="btn" data-r="0">Cần luyện thêm</button></div>`;
+fb.querySelectorAll("[data-r]").forEach(b=>b.onclick=()=>{S.t[0]+=+b.dataset.r;S.t[1]++;fb.querySelector("div").innerHTML=b.dataset.r=="1"?"🎉 Tuyệt, đã ghi nhận!":"🔁 Không sao, đọc lại đáp án rồi thử lần sau nhé.";sfx(b.dataset.r=="1");upd()})};$("#ts").appendChild(c)});
+/* fx */
+$("#go").onclick=()=>$("#p1").scrollIntoView();
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add("on");io.unobserve(x.target)}}),{threshold:.06});
+document.querySelectorAll(".rv").forEach(el=>io.observe(el));
+addEventListener("scroll",()=>$("#top").classList.toggle("on",scrollY>innerHeight*.8));
+$("#pts").innerHTML=Array.from({length:14},(_,i)=>`<i class="pt" style="left:${Math.random()*100}%;animation-duration:${9+Math.random()*7}s;animation-delay:${-i*1.3}s"></i>`).join("");
+(function(){let s=`<path d="M280 20C210 30 170 60 120 100C90 124 60 140 20 150" stroke="#4a2f2a" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M200 44C190 70 170 84 160 110M120 100C110 80 96 70 80 62" stroke="#4a2f2a" stroke-width="3" fill="none" stroke-linecap="round"/>`;
+[[250,26],[222,34],[196,52],[176,70],[150,92],[130,104],[104,116],[76,132],[44,142],[196,76],[168,100],[84,70],[100,88],[238,44]].forEach(([x,y])=>{for(let k=0;k<5;k++){const a=k*72*Math.PI/180;s+=`<circle cx="${x+Math.cos(a)*6}" cy="${y+Math.sin(a)*6}" r="6" fill="#f2a3ad"/>`}s+=`<circle cx="${x}" cy="${y}" r="3" fill="#d63a2b"/>`});$("#br").innerHTML=s})();
+upd();
+</script>
+</body>
+</html>
